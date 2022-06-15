@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<!---------------------------------Style tag start------------------------------------>
+	<style>
+		.updatelog_box{
+			border: 2px solid black;
+			height: inherit;
+			width: inherit;
+		}
+		.collapsible{
+  			background-color: #eee;
+  			color: #444;
+  			cursor: pointer;
+  			padding: 18px;
+			width: 100%;
+			border: none;
+			text-align: left;
+			outline: none;
+			font-size: 15px;
+		}
+		.active, .collapsible:hover{
+			  background-color: #ccc;
+		}
+		.content {
+  			padding: 0 18px;
+  			background-color: white;
+  			max-height: 0;
+  			overflow: hidden;
+  			transition: max-height 0.2s ease-out;
+		}
+		.collapsible:after {
+  			content: '\02795'; /* Unicode character for "plus" sign (+) */
+  			font-size: 13px;
+  			color: white;
+  			float: right;
+  			margin-left: 5px;
+		}
+		.active:after {
+  			content: "\2796"; /* Unicode character for "minus" sign (-) */
+		}
+		/*---------------------------------Menu bar start------------------------------------*/
+		body{
+			background-color: lightgray;
+		}
+		.menu_bar{
+			background-color: rgb(131, 130, 133);
+			margin-top: 30px;
+			height: inherit	;
+		}
+		a{
+			margin: 25px;
+			display: inline-block;
+			color: black;
+		}	
+		a:hover{
+			color: white;
+			transition: 1s;
+		}
+		#Livstin{
+			color: rgb(87, 52, 158);
+			font-size: 248px;
+		}
+		#Livstin:hover{
+			color: rgb(122, 9, 29);
+			transition-duration: 1s;
+		}
+		/*---------------------------------Menu bar end------------------------------------*/
+	</style>
+
+	<!---------------------------------Style tag end------------------------------------>
+
+	<center>
+		<div class="menu_bar">
+			<div id="menu_item">
+				<a href="./LivstinMainPage.html"><h2>Our Numbers</h2></a>
+				<a href="./LivstinUpdateLogs.html"><h2>Update Logs</h2></a>
+			</div>
+		</div>
+	</center>
+	<p>
+		<center>
+			<div id="Livstin">
+				LIVSTIN
+			</div>
+		</center>
+	</p>
+	<center>
+		<br><br><br>
+			<div class="updatelog_box">
+				<button type="button" class="collapsible">(Livstin's Website) - 15.6.2022</button>
+				<div class="content">
+		  			<p>
+		  				<ul>
+		  					<li>Livstin website created!</li>
+		  				</ul>
+		  			</p>
+				</div>
+			</div>
+	</center>
+
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+
+
+
+
+
+</body>
+</html>
